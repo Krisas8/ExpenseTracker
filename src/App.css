@@ -1,38 +1,266 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@1,600&family=Oswald:wght@700&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap');
+body {
+    background-color: rgb(170, 198, 198);
+    font-family: 'Roboto Condensed';
+    letter-spacing: 0.8px;
+    margin: 0;
+    padding: 0;
+}
+.grid-container {
+    /* background-color: rgb(245, 241, 241); */
+    max-width: 800px; 
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 0px auto;    
+}
+@media screen and (max-width: 470px) {
+   .grid-container {
+    margin-left: 0px 0px;
+    grid-template-columns: repeat(4,2fr);
+   } 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header  {
+    margin: 0px auto;
+    grid-column: span 4;
+    color: rgb(229, 228, 228);
+    text-transform: uppercase;
+    font-size: larger;
 }
+@media screen and (max-width: 470px) {
+    .header {
+        margin-left: 5px;
+        grid-column: 1 / span 4;
+    } 
+ }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.balance, .balance > h4 {
+    text-transform: uppercase;
+    grid-column: 2 / span 4;
+    margin-bottom: 0px;
+    font-size:x-large;  
+}
+@media screen and (max-width: 470px) {
+    .balance, .balance > h4 {
+        margin-left: 5px;
+        grid-column: 1 / span 4;
+    } 
+ }
+.balance > h2 {
+    color: rgb(229, 228, 228);
+    margin-top: 1px;
+}
+@media screen and (max-width: 470px) {
+    .balance > h2 {
+        margin-left: 5px;
+        grid-column: 1 / span 4;
+    } 
+ }
+.incomeexpenses {
+    max-width: 60%;
+    height: 100px;
+    background-color: whitesmoke;
+    border: 2px solid rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 1fr 0.10fr 1fr;
+    grid-column: 2 / span 4;
+    padding: 0px 10px;
+    justify-items: center;
+    align-items: center;
+    box-shadow: 5px 5px 3px grey;
+    border-radius: 10px;
+}
+@media screen and (max-width: 470px) {
+    .incomeexpenses {
+        margin-left: 5px;
+        grid-column: 1 / span 4;
+    } 
+ }
+.income >h5,h3 {
+  margin: 0px;
+  text-transform: uppercase;
+}
+.income > h3 {
+    color: rgba(6, 188, 36, 0.626);
+    font-size: x-large;
+}
+.expenses >h5,h3 {
+    margin: 0px;
+    text-transform: uppercase;
   }
+.expenses > h3 {
+    color: rgba(188, 6, 55, 0.626);
+    font-size: x-large;
+}
+.dividingline {
+    max-width: 1px;
+    height: 70%;
+    border: 1px solid rgb(180, 177, 177);
+}
+.transactions {
+    grid-column: 2 / span 4;
+    margin-top: 25px;
+    font-size: x-large;
+    
+}
+@media screen and (max-width: 470px) {
+    .transactions {
+        margin-left: 5px;
+        grid-column: 1 / span 4;
+    } 
+ }
+.transactions > h4 {
+    grid-column: 2 / 3;
+    padding-bottom: 5px;
+    border-bottom: 3px solid rgb(176, 175, 175);
+    text-transform: uppercase;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.list {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-column: 2 / 4;
+    padding: 0px;
+    color: black;
+}
+.minus  {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 2.5fr 1.7fr 0.5fr;
+    grid-column: 1/ 2;
+    height: 35px;
+    list-style: none;
+    padding: 0px 2%;
+    margin-bottom: 8px;
+    border-right: 10px solid red;
+    align-items: center;
+    justify-items: start;
+}
+.plus  {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 2.5fr 1.7fr 0.5fr;
+    grid-column: 1 / 2; 
+    height: 35px;
+    list-style: none;
+    padding: 0px 2%;
+    margin-bottom: 8px;
+    border-right: 10px solid green;
+    align-items: center;
+    justify-items: start;
+}
+.plus:hover .delete-btn {
+    opacity: 0.8;
+}
+.minus:hover .delete-btn {
+    opacity: 0.8;
+}
+.minus > h5 {
+    
+    margin: 0px 0px 0px 0px;
+}
+.plus > h5 {
+    
+    margin: 0px 0px 0px 0px;
+}
+.minus > span {
+    width: 100%;
+    width: 90%;
+    font-size: medium;
+    font-weight: 900;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: end;
+    padding: 0;
+    margin: 0px 0px 0px 0px;
+   
+}
+.plus > span {
+    font-size: medium;
+    font-weight: 900;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: end;
+    margin: 0px 0px 0px 0px;
+    
+}
+.addNewTransaction {
+    width: 65%;
+    grid-column: 2 / span 4;
+    margin-top: 25px;
+    font-size: x-large;
+}
+@media screen and (max-width: 470px) {
+    .addNewTransaction {
+        margin-left: 5px;
+        grid-column: 1 / span 4;
+    } 
+ }
+.addNewTransaction >h4 {
+    
+    padding-bottom: 5px;
+    border-bottom: 3px solid rgb(176, 175, 175);
+    text-transform: uppercase;
+}
+.form-control {
+    margin: 0px;
+    padding: 0px;
+}
+.form-control > label {
+    text-transform: uppercase;
+    font-size: medium;
+    font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
-}
+ .label > span {
+     font-size:small;
+ }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ .amountDescription {
+     font-size: small;
+ }
+
+ .input {
+     width: 97%;
+     height: 30px;
+     background-color: white;
+     border:2px solid rgb(176, 175, 175);
+ }
+ ::placeholder {
+     font-size: medium;
+     color: rgb(112, 112, 119);
+     font-weight: bold;
+     padding-left: 3px;
+ }
+ :focus::placeholder{
+     color: transparent;
+     padding-left: 3px;
+ }
+.btn-addTransaction {
+   width: 99.5%;
+   height: 45px;
+   border-radius:3px;
+   background-color:rgba(188, 6, 55, 0.626);
+   color: whitesmoke;
+   font-size: medium;
+   font-weight: bold;
+   padding: 8px 15px;
+   margin-top: 15px;
+   text-transform: uppercase;
+}
+.btn-addTransaction:hover {
+    box-shadow:  5px 5px 10px grey;
+    width: 99.7%;
+    height: 46px;
+}
+.delete-btn {
+    grid-column: 3/4;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: brown;
+    color: white;
+    opacity: 0;
+    margin-left: 6px;   
 }
